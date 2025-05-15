@@ -1,3 +1,8 @@
+"use strict";
+
+/////////////////////////////////////////////////////////////////
+/////////////////////// JavaScript Fundamentals - Part 1
+/*
 //// Variables and Values
 const country = "Bangladesh";
 const continent = "Asia";
@@ -51,7 +56,7 @@ console.log(3 + +"3"); // 6
 console.log(3 + Number("3")); // 6
 console.log(typeof 3 + ""); // Unary version of String(3)
 
-/*
+
 //// Equality Operators: == vs ===
 const numNeighbours = Number(
   prompt(`How many neighbour countries does your country
@@ -62,7 +67,7 @@ else if (numNeighbours > 1) console.log(`More than 1 border`);
 else console.log(`No borders`);
 // Using === strict equality helped check if both the value and the data type are number and numeric 1 respectively, where as the loose equality wasn't checking if the data type was a number or not, it was just making sure to validate the string '1' into the right answer no matter it's data type.
 // Converting the data type into number using Number() function helped as both the data type and the value is a numeric, which help along side with the strict equalitys' === validation.
-*/
+
 
 //// Logical Operators
 if (language === "English" && population < 50000000 && isIsland)
@@ -97,3 +102,65 @@ console.log(
     population > 33000000 ? `above` : "below"
   } average`
 );
+*/
+
+/////////////////////////////////////////////////////////////////
+/////////////////////// JavaScript Fundamentals - Part 2
+
+//// Functions
+function describeCountry(country, population, capitalCity) {
+  const countryStatus = `${country} has ${population} people and it's capital city is ${capitalCity}`;
+  return countryStatus;
+}
+
+const descriptionBangladesh = describeCountry("Bangladesh", 180000000, "Dhaka");
+console.log(descriptionBangladesh);
+const descriptionIreland = describeCountry("Ireland", 5300000, "Dublin");
+console.log(descriptionIreland);
+const descriptionPortugal = describeCountry("Portugal", 10400000, "Lisbon");
+console.log(descriptionPortugal);
+
+//// Function Declarations vs. Expressions
+function percentageOfWorld1(population) {
+  return (population / 7900000000) * 100;
+}
+const chinaPopulation = percentageOfWorld1(1441000000);
+const irelandPopulation = percentageOfWorld1(5300000);
+const bangladeshPopulation = percentageOfWorld1(180000000);
+
+console.log(
+  chinaPopulation.toFixed(1),
+  irelandPopulation,
+  bangladeshPopulation
+);
+
+const percentageOfWorld2 = function (population) {
+  return (population / 7900000000) * 100;
+};
+
+const portugalPopulation = percentageOfWorld2(10400000);
+const russiaPopulation = percentageOfWorld2(143000000);
+const ukrainePopulation = percentageOfWorld2(38000000);
+
+console.log(portugalPopulation, russiaPopulation, ukrainePopulation);
+
+//// Arrow Functions
+const percentageOfWorld3 = (population) => (population / 7900000000) * 100;
+
+const polandPopulation = percentageOfWorld3(36000000);
+const turkeyPopulation = percentageOfWorld3(85000000);
+const southKoreaPopulation = percentageOfWorld3(51000000);
+
+console.log(polandPopulation, turkeyPopulation, southKoreaPopulation);
+
+//// Functions Calling Other Functions
+const describePopulation = (country, population) =>
+  `${country} has ${population} people, which is about ${percentageOfWorld1(
+    population
+  ).toFixed(1)}% of the world`;
+
+console.log(describePopulation("China", 1441000000));
+console.log(describePopulation("Ireland", 5300000));
+console.log(describePopulation("Bangladesh", 180000000));
+
+//// Introduction to Arrays
