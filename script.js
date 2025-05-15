@@ -97,3 +97,67 @@ function fruitProcessor(apples, oranges) {
 
 console.log(fruitProcessor(2, 3));
 */
+
+/*
+//// Reviewing Functions
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+
+  if (retirement > 0) {
+    console.log(`${firstName} retires in ${retirement} years `);
+    return retirement;
+  } else {
+    console.log(`${firstName} has already retired `);
+    return -1;
+  }
+};
+
+console.log(yearsUntilRetirement(1991, "Jonas"));
+console.log(yearsUntilRetirement(1950, "Mike"));
+*/
+
+//// Introduction to Arrays
+const friend1 = "Micheal";
+const friend2 = "Steven";
+const friend3 = "Peter";
+
+const friends = ["Micheal", "Steven", "Peter"];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length); // Finds the total length of the Array(not in base 0)
+console.log(friends[friends.length - 1]); // 3 - 1 = 2: We can get/retrieve the last number with this expression. Inside this array brackets JS expects expressions(math-operations)
+
+friends[2] = "Jay";
+console.log(friends);
+// friends = ["Bob", "Alicia Tan"];
+
+const firstName = "Jonas";
+const jonas = [firstName, "Schmedthmann", 2037 - 1991, "teacher", friends];
+console.log(jonas);
+console.log(jonas.length);
+
+// Exercise
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const year = [1990, 1967, 2002, 2010, 2018];
+calcAge(year);
+
+const age1 = calcAge(year[0]);
+const age2 = calcAge(year[1]);
+const age3 = calcAge(year[year.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [calcAge(year[0]), calcAge(year[1]), calcAge(year[2])];
+console.log(ages);
