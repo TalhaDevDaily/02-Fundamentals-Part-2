@@ -164,3 +164,35 @@ console.log(describePopulation("Ireland", 5300000));
 console.log(describePopulation("Bangladesh", 180000000));
 
 //// Introduction to Arrays
+const population = [180000000, 5300000, 1441000000, 51000000];
+console.log(population.length === 4);
+
+function percentageOfWorld1(population) {
+  return (population / 7900000000) * 100;
+}
+
+const percentages = [
+  percentageOfWorld1(population[0]),
+  percentageOfWorld1(population[1]),
+  percentageOfWorld1(population[2]),
+  percentageOfWorld1(population[3]),
+];
+
+console.log(percentages);
+
+//// Basic Array Operation (Methods)
+const neighbours = ["Poland", "Ukraine", "Norway"];
+neighbours.push("Utopia");
+neighbours.pop();
+
+if (!neighbours.includes("Germany")) {
+  console.log("Probably not a central European country :D");
+}
+// console.log(
+//   `Probably ${
+//     neighbours.includes("Germany") ? "" : "not"
+//   } a central European Country :D`
+// );
+
+neighbours[neighbours.indexOf("Norway")] = "Finland";
+console.log(neighbours);
