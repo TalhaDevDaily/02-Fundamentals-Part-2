@@ -196,3 +196,21 @@ if (!neighbours.includes("Germany")) {
 
 neighbours[neighbours.indexOf("Norway")] = "Finland";
 console.log(neighbours);
+
+//// Introduction to Objects
+const myCountry = {
+  country: "Russia",
+  capital: "Moscow",
+  language: "Russian",
+  population: 143000000,
+  neighbours: ["Poland", "Ukraine", "Norway"],
+};
+
+console.log(myCountry);
+
+//// Dots vs. Bracket Notation
+console.log(
+  `${myCountry["country"]} has ${myCountry["population"]} russian-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
+);
+
+//// Object Methods

@@ -221,6 +221,7 @@ const jonas = {
 };
 */
 
+/*
 //// Dots vs. Notation
 const jonas = {
   firstName: "Jonas",
@@ -229,3 +230,59 @@ const jonas = {
   job: "teacher",
   friends: ["Michael", "Peter", "Steven"],
 };
+
+console.log(jonas);
+
+console.log(jonas.lastName);
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+// console.log(jonas."last" + nameKey])
+
+const interestedIn = prompt(
+  "What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends"
+);
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends"
+  );
+}
+
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonasschmedtmann";
+console.log(jonas);
+
+// Challenge
+// "Jonas has 3 friends, and his best friend is called Michael"
+console.log(
+  `${jonas["firstName"]} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
+);
+*/
+
+//// Object Methods
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+
+  calcAge: function () {
+    console.log(this);
+    return 2037 - this.birthYear;
+  },
+};
+
+console.log(jonas.calcAge());
+// console.log(jonas["calcAge"](1991));
