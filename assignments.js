@@ -267,13 +267,12 @@ for (let i = 0; i < listOfNeighbours.length; i++) {
 }
 
 //// The while Loop
-const populations2 = [180000000, 5300000, 1441000000, 51000000];
 const percentages3 = [];
 
 let i = 0;
-while (i < populations2.length) {
+while (i < populations.length) {
   function percentageOfWorld1() {
-    return (populations2[i] / 7900000000) * 100;
+    return (populations[i] / 7900000000) * 100;
   }
   percentages3.push(percentageOfWorld1());
   i++;
