@@ -201,16 +201,84 @@ console.log(neighbours);
 const myCountry = {
   country: "Russia",
   capital: "Moscow",
-  language: "Russian",
+  language: "russian",
   population: 143000000,
   neighbours: ["Poland", "Ukraine", "Norway"],
+  describe: function () {
+    return `${this.country} has ${this.population} ${this.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${this.capital}.`;
+  },
+
+  checkIsIsland: function () {
+    this.isIsland = this.neighbours.length > 0 ? false : true;
+    return this.isIsland;
+  },
 };
 
 console.log(myCountry);
 
 //// Dots vs. Bracket Notation
 console.log(
-  `${myCountry["country"]} has ${myCountry["population"]} russian-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
+  `${myCountry["country"]} has ${myCountry["population"]} ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
 );
 
 //// Object Methods
+console.log(myCountry.describe());
+myCountry.checkIsIsland();
+console.log(myCountry.isIsland);
+
+//// Iteration: The for Loop
+for (let voter = 1; voter <= 50; voter++) {
+  console.log(`Voter number ${voter} is currently voting`);
+}
+
+//// Looping Arrays, Breaking and Continuing
+const populations = [180000000, 5300000, 1441000000, 51000000];
+const percentages2 = [];
+
+for (let i = 0; i < populations.length; i++) {
+  function percentageOfWorld1() {
+    return (populations[i] / 7900000000) * 100;
+  }
+  percentages2.push(percentageOfWorld1());
+}
+
+console.log(percentages2, percentages);
+// The for Loop made it easier to shorten the code and kept the code dry; eliminating any additional repeatations
+
+//// Looping Backwards and Loops in Loops
+const listOfNeighbours = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
+// My Solution
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  const seperateGroups = listOfNeighbours[i];
+  for (let i = 0; i < seperateGroups.length; i++) {
+    console.log(`Neighbours: ${seperateGroups[i]}`);
+  }
+}
+
+// Tutorial Solution
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  for (let y = 0; y < listOfNeighbours[i].length; y++) {
+    console.log(`Neighbours: ${listOfNeighbours[i][y]}`);
+  }
+}
+
+//// The while Loop
+const populations2 = [180000000, 5300000, 1441000000, 51000000];
+const percentages3 = [];
+
+let i = 0;
+while (i < populations2.length) {
+  function percentageOfWorld1() {
+    return (populations2[i] / 7900000000) * 100;
+  }
+  percentages3.push(percentageOfWorld1());
+  i++;
+}
+
+console.log(percentages3, percentages2);
+
+// The for loop is more preferred here. Because, we know before hand the number of iterations there needs to be, and in this case while loop just makes the process longer.

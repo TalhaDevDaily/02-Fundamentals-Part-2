@@ -265,6 +265,7 @@ console.log(
 );
 */
 
+/*
 //// Object Methods
 const jonas = {
   firstName: "Jonas",
@@ -278,11 +279,153 @@ const jonas = {
   //   return 2037 - birthYear;
   // },
 
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+
   calcAge: function () {
-    console.log(this);
-    return 2037 - this.birthYear;
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    this.license = `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
+    return this.license;
   },
 };
 
 console.log(jonas.calcAge());
-// console.log(jonas["calcAge"](1991));
+
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+// Challenge
+// "Jonas is a 46-year old teacher, and he has a/no driver's license"
+// console.log(jonas.verifyLicense());
+jonas.getSummary();
+console.log(jonas.license);
+*/
+
+/*
+//// Iteration: The for Loop
+// console.log(`Lifting weights repetition 1 🏋️`);
+// console.log(`Lifting weights repetition 2 🏋️`);
+// console.log(`Lifting weights repetition 3 🏋️`);
+// console.log(`Lifting weights repetition 4 🏋️`);
+// console.log(`Lifting weights repetition 5 🏋️`);
+// console.log(`Lifting weights repetition 6 🏋️`);
+// console.log(`Lifting weights repetition 7 🏋️`);
+// console.log(`Lifting weights repetition 8 🏋️`);
+// console.log(`Lifting weights repetition 9 🏋️`);
+// console.log(`Lifting weights repetition 10 🏋️`);
+
+// for loop keeps running while condition it TRUE
+for (let rep = 5; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️`);
+}
+*/
+
+/*
+//// Looping Arrays, Breaking and Continuing
+const jonas = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true,
+];
+
+const types = [];
+
+// console.log(jonas[0])
+// console.log(jonas[1])
+// ...
+// console.log(jonas[4])
+// jonas[5] does not exist
+
+for (let i = 0; i < jonas.length; i++) {
+  // Reading from jonas array
+  console.log(jonas[i], typeof jonas);
+
+  // Filling types array
+  // types[i] = typeof jonas[i];
+  types.push(typeof jonas[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+// continue and break
+console.log(`--- ONLY STRINGS ---`);
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== "string") continue;
+  console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log(`--- BREAK WITH NUMBER ---`);
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] === "number") break;
+  console.log(jonas[i], typeof jonas[i]);
+}
+*/
+
+/*
+//// Looping Backwards and Loops in Loops
+const jonas = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true,
+];
+
+// 0, 1, ...,4
+// 4, 3, ...,0
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+  console.log(i, jonas[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-------- Starting exercise ${exercise}`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`${exercise} exercise: Lifting weight repetition ${rep} 🏋️`);
+  }
+}
+*/
+
+//// The while Loop
+// for Loop can be used for smaller operation. It is very dependable on iterations. That means whenever you do know before hand how many iterations(i) the loop will have
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️`);
+// }
+
+// While, while Loop is versatile, and can be used in larger operations. Does not depend on any counter variable. So whenever you do not know before hand how many iterations(i) the loop will have
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE: Lifting weights repetition ${rep} 🏋️`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`Loop is about to end...`);
+}
