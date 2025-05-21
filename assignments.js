@@ -236,10 +236,8 @@ const populations = [180000000, 5300000, 1441000000, 51000000];
 const percentages2 = [];
 
 for (let i = 0; i < populations.length; i++) {
-  function percentageOfWorld1() {
-    return (populations[i] / 7900000000) * 100;
-  }
-  percentages2.push(percentageOfWorld1());
+  const perc = percentageOfWorld1(population[i]);
+  percentages2.push(perc);
 }
 
 console.log(percentages2, percentages);
@@ -271,10 +269,8 @@ const percentages3 = [];
 
 let i = 0;
 while (i < populations.length) {
-  function percentageOfWorld1() {
-    return (populations[i] / 7900000000) * 100;
-  }
-  percentages3.push(percentageOfWorld1());
+  const perc = percentageOfWorld1(populations[i]);
+  percentages3.push(perc);
   i++;
 }
 
